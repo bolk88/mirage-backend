@@ -1,0 +1,18 @@
+// filepath: mirage-backend/src/controllers/user.controller.ts
+export class UserController {
+    public createUser(req, res) {
+        // Logic for creating a user
+    }
+
+    public getUser(req, res) {
+        // Logic for retrieving a user
+    }
+
+    public updateUser(req, res) {
+        // Logic for updating a user
+    }
+
+    public deleteUser(req, res) {
+        // Logic for deleting a user
+    }
+}

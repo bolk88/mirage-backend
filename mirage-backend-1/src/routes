@@ -1,0 +1,18 @@
+// filepath: mirage-backend/src/routes/user.routes.ts
+
+import { Router } from 'express';
+import UserController from '../controllers/user.controller';
+
+const router = Router();
+const userController = new UserController();
+
+const setUserRoutes = () => {
+    router.post('/users', userController.createUser);
+    router.get('/users/:id', userController.getUser);
+    router.put('/users/:id', userController.updateUser);
+    router.delete('/users/:id', userController.deleteUser);
+    
+    return router;
+};
+
+export default setUserRoutes;
