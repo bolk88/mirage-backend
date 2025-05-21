@@ -1,0 +1,19 @@
+node_modules/
+
+.env
+.env.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+
+dist/
+build/
+
+
+.npm/
+
+
+uploads/
