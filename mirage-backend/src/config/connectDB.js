@@ -2,20 +2,24 @@ import pg from "pg";
 const { Client } = pg;
 
 const connectDB = async () => {
-  const dbName = "mirage_store"; // ✅ Replace with your actual DB name
+  const dbName = "mirage";
   const config = {
-    user: "your_user",       // ✅ Replace with your DB username
-    password: "your_password", // ✅ Replace with your DB password
+    user: "postgres",
+    password: "asd",
     host: "localhost",
     port: 5432,
-    database: "postgres",    // Connect to the default database first
+    database: "template1", // connect to default DB first
   };
 
   const client = new Client(config);
 
   try {
     await client.connect();
-    const res = await client.query(`SELECT 1 FROM pg_database WHERE datname = $1`, [dbName]);
+
+    const res = await client.query(
+      `SELECT 1 FROM pg_database WHERE datname = $1`,
+      [dbName]
+    );
 
     if (res.rowCount === 0) {
       await client.query(`CREATE DATABASE ${dbName}`);
