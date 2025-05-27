@@ -7,10 +7,10 @@ import connectDB from "./src/config/connectDB.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use(express.json());
 
-app.use("/api/users", router);
+app.use("/api/auth", router);
 
 connectDB();
 

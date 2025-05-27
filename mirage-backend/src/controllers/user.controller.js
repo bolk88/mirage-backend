@@ -1,4 +1,4 @@
-import User from "../models/user.modal.js";
+// import User from "../models/user.modal.js";
 
 export const getUsers = async (req, res) => {
   try {
@@ -12,8 +12,8 @@ export const getUsers = async (req, res) => {
 export const createUser = async (req, res) => {
   try {
     const { name, email } = req.body;
-    const newUser = new User({ name, email });
-    await newUser.save();
+    // const newUser = new User({ name, email });
+    // await newUser.save();
     res.status(201).json(newUser);
   } catch (err) {
     res.status(400).json({ error: "Invalid data" });
